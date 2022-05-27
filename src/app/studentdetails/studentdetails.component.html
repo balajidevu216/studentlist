@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="formm  mt-2 p-3">
+        
+        <form [formGroup]="userForm" (ngSubmit)="OnSubmit()">
+            <div class="form-row">
+                 
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Student Name</b></label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" formControlName="name" size="150" class="form-group">
+                    </div>
+                </div>
+
+                <br>
+        
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Email</b></label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" formControlName="email" size="150" class="form-group">
+                    </div>
+                </div>
+        
+                <br>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Phone Number</b></label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" formControlName="number" size="150" class="form-group">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Age</b></label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" formControlName="age" size="150" class="form-group">
+                    </div>
+                </div>
+
+                <br>
+        
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Joined Date</b></label>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" size="150" sformControlName="date" class="form-group">
+                    </div>
+                </div>
+
+                <br>
+        
+                <div class="form-group">
+                    <div class="form-row">
+                        <label><b>Gender</b></label>
+                    </div>
+                    <div class="form-row">
+                        <span>
+                            <input type="radio" formControlName="gender" value="male" class="form-group">Male
+                        </span>
+
+                         <br>
+
+                        <span>
+                             <input type="radio" formControlName="gender" value="female" class="form-group">Female
+                        </span>
+                    </div>
+                        
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+
+
+<div class="tablee  mt-2 p-3">
+<h1>Student List</h1>
+<br>
+<button type="button" class="btn btn-primary" (click)="addItem()">Add Student</button>
+<br>
+<br>
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Student Info</th>
+        <th>Phone Number</th>
+        <th>Joined Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of listData">
+        <td>{{item.name}}</td>
+        <td>{{item.number}}</td>
+        <td>{{item.date}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
