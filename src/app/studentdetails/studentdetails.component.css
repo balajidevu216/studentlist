@@ -12,3 +12,26 @@
     margin-left: 40px;
     width: 1220px;
 }
+table,th,td {
+    border-collapse: collapse;
+}
+th,td {
+    font-size: small;
+    padding: 5px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+tr:nth-child(even){
+    background-color: azure;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(255, 249, 241);
+}
+.center {
+    border-radius: 6px;
+}
+.form-row {
+    font-size: small;
+}

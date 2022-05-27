@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="formm  mt-2 p-3">
+    <div class="formm  mt-2 p-3 md-5">
         
         <form [formGroup]="userForm" (ngSubmit)="OnSubmit()">
             <div class="form-row">
@@ -10,6 +10,10 @@
                     </div>
                     <div class="form-row">
                         <input type="text" formControlName="name" size="150" class="form-group">
+                    </div>
+
+                    <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                        <div *ngIf="f.name.errors?.required">Name is required.</div>
                     </div>
                 </div>
 
@@ -22,6 +26,10 @@
                     <div class="form-row">
                         <input type="text" formControlName="email" size="150" class="form-group">
                     </div>
+
+                    <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+                        <div *ngIf="f.email.errors?.required">Email ID is required.</div>
+                    </div>
                 </div>
         
                 <br>
@@ -31,7 +39,11 @@
                         <label><b>Phone Number</b></label>
                     </div>
                     <div class="form-row">
-                        <input type="text" formControlName="number" size="150" class="form-group">
+                        <input type="text" formControlName="number" maxlength="10" size="150" class="form-group">
+                    </div>
+
+                    <div *ngIf="f.number.touched && f.number.invalid" class="alert alert-danger">
+                        <div *ngIf="f.number.errors?.required">Mobile Number is required.</div>
                     </div>
                 </div>
 
@@ -44,6 +56,10 @@
                     <div class="form-row">
                         <input type="text" formControlName="age" size="150" class="form-group">
                     </div>
+
+                    <div *ngIf="f.age.touched && f.age.invalid" class="alert alert-danger">
+                        <div *ngIf="f.age.errors?.required">Age is required.</div>
+                    </div>
                 </div>
 
                 <br>
@@ -53,7 +69,11 @@
                         <label><b>Joined Date</b></label>
                     </div>
                     <div class="form-row">
-                        <input type="text" size="150" sformControlName="date" class="form-group">
+                        <input type="text" size="150" formControlName="date" class="form-group">
+                    </div>
+
+                    <div *ngIf="f.date.touched && f.date.invalid" class="alert alert-danger">
+                        <div *ngIf="f.date.errors?.required">Date is required.</div>
                     </div>
                 </div>
 
@@ -63,6 +83,7 @@
                     <div class="form-row">
                         <label><b>Gender</b></label>
                     </div>
+                
                     <div class="form-row">
                         <span>
                             <input type="radio" formControlName="gender" value="male" class="form-group">Male
@@ -74,10 +95,19 @@
                              <input type="radio" formControlName="gender" value="female" class="form-group">Female
                         </span>
                     </div>
+
+                    <br>
+                    <br>
+                   
+                    <div class="center col-6">
+                        <button type="submit" class="btn btn-primary" (click)="addItem()">Add Student</button>
+                    </div>
                         
                 </div>
             </div>
         </form>
+<br>
+<br>
     </div>
 </div>
 
