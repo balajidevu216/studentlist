@@ -22,12 +22,16 @@ export class StudentdetailsComponent implements OnInit {
       gender: ['', Validators.required],
       email: ['', Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z.-]+\\.[a-z]{2,4}$")],
       number: ['',Validators.required,Validators.pattern("[0-9]{10}")],
-      date:['', Validators.required],
+      date:['', Validators.required,Validators.pattern("[dd/MM/YYYY]")],
     })
   }
 
   public addItem(): void {
       this.listData.push(this.userForm.value)
+  }
+
+  get f(){
+    return this.userForm.controls;
   }
 
   OnSubmit(){
